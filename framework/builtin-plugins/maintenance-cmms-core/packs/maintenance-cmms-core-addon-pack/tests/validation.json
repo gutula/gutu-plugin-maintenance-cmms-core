@@ -1,0 +1,24 @@
+{
+  "packageId": "maintenance-cmms-core",
+  "packName": "maintenance-cmms-core-addon-pack",
+  "expectedActions": [
+    "maintenance.plans.publish",
+    "maintenance.work-orders.release",
+    "maintenance.asset-health.record"
+  ],
+  "expectedResources": [
+    "maintenance.plans",
+    "maintenance.work-orders",
+    "maintenance.asset-health"
+  ],
+  "expectedReports": [
+    "Maintenance Plan Summary",
+    "Downtime Summary",
+    "Preventive Compliance"
+  ],
+  "expectedExceptionQueues": [
+    "overdue-maintenance",
+    "downtime-escalation",
+    "maintenance-plan-review"
+  ]
+}

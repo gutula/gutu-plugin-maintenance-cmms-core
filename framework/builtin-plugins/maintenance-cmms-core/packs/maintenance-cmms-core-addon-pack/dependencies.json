@@ -1,0 +1,20 @@
+{
+  "plugin": "maintenance-cmms-core",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "assets-core",
+    "inventory-core",
+    "support-service-core",
+    "traceability-core"
+  ],
+  "requiredCapabilities": [
+    "ui.register.admin",
+    "api.rest.mount",
+    "data.write.maintenance",
+    "events.publish.maintenance"
+  ]
+}

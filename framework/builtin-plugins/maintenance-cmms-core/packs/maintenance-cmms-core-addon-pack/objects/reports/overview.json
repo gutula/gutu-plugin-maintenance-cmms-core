@@ -1,0 +1,18 @@
+{
+  "pluginId": "maintenance-cmms-core",
+  "reports": [
+    "Maintenance Plan Summary",
+    "Downtime Summary",
+    "Preventive Compliance"
+  ],
+  "exceptionQueues": [
+    "overdue-maintenance",
+    "downtime-escalation",
+    "maintenance-plan-review"
+  ],
+  "operationalScenarios": [
+    "preventive-plan-publication",
+    "work-order-release",
+    "downtime-recording"
+  ]
+}

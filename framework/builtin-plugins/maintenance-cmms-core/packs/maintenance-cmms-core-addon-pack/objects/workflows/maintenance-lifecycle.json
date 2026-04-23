@@ -1,0 +1,9 @@
+{
+  "workflowId": "maintenance-lifecycle",
+  "actors": [
+    "planner",
+    "maintenance-lead",
+    "technician"
+  ],
+  "description": "Plan, release, inspect, repair, and close maintenance work."
+}

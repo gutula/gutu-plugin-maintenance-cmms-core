@@ -1,0 +1,9 @@
+{
+  "workspace": "maintenance",
+  "route": "/admin/business/maintenance",
+  "pageTitle": "Maintenance Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}

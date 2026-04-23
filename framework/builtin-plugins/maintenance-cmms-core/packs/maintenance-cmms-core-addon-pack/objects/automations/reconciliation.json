@@ -1,0 +1,10 @@
+{
+  "automationId": "maintenance-cmms-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "maintenance.reconciliation.run",
+  "queues": [
+    "overdue-maintenance",
+    "downtime-escalation",
+    "maintenance-plan-review"
+  ]
+}
