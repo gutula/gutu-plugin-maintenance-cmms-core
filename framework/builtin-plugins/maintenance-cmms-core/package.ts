@@ -23,8 +23,6 @@ export default definePackage({
     "audit-core",
     "workflow-core",
     "assets-core",
-    "inventory-core",
-    "support-service-core",
     "traceability-core"
   ],
   "dependencyContracts": [
@@ -59,22 +57,56 @@ export default definePackage({
       "rationale": "Required for Maintenance & CMMS Core to keep its boundary governed and explicit."
     },
     {
-      "packageId": "inventory-core",
-      "class": "required",
-      "rationale": "Required for Maintenance & CMMS Core to keep its boundary governed and explicit."
-    },
-    {
-      "packageId": "support-service-core",
-      "class": "required",
-      "rationale": "Required for Maintenance & CMMS Core to keep its boundary governed and explicit."
-    },
-    {
       "packageId": "traceability-core",
       "class": "required",
       "rationale": "Required for Maintenance & CMMS Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "inventory-core",
+      "class": "optional",
+      "rationale": "Recommended with Maintenance & CMMS Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "support-service-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Maintenance & CMMS Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "field-service-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Maintenance & CMMS Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "hr-payroll-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Maintenance & CMMS Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "analytics-bi-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Maintenance & CMMS Core with deeper downstream automation, visibility, or workflow coverage."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "inventory-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "support-service-core",
+    "field-service-core",
+    "hr-payroll-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [
+    "sector-manufacturing"
+  ],
+  "standaloneSupported": false,
+  "installNotes": [
+    "Maintenance is best introduced once Assets exists, otherwise work orders lack a stable installed-base anchor."
+  ],
+  "optionalWith": [
+    "inventory-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "maintenance.plans",

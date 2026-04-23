@@ -61,11 +61,26 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `maintenance-cmms-core` |
 | Repo | [gutu-plugin-maintenance-cmms-core](https://github.com/gutula/gutu-plugin-maintenance-cmms-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `assets-core`, `inventory-core`, `support-service-core`, `traceability-core` |
+| Recommended Plugins | None |
+| Capability Enhancing | None |
+| Integration Only | None |
+| Suggested Packs | None |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.maintenance`, `events.publish.maintenance` |
 | Provided Capabilities | `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `assets-core`, `inventory-core`, `support-service-core`, `traceability-core`
+- Recommended plugins: none
+- Capability-enhancing plugins: none
+- Integration-only plugins: none
+- Suggested packs: none
+- Standalone supported: yes
+
 
 ## Capability Matrix
 

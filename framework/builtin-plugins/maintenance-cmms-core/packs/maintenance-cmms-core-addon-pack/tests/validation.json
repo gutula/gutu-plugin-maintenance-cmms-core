@@ -1,6 +1,28 @@
 {
   "packageId": "maintenance-cmms-core",
   "packName": "maintenance-cmms-core-addon-pack",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "assets-core",
+    "traceability-core"
+  ],
+  "recommendedPlugins": [
+    "inventory-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "support-service-core",
+    "field-service-core",
+    "hr-payroll-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [
+    "sector-manufacturing"
+  ],
   "expectedActions": [
     "maintenance.plans.publish",
     "maintenance.work-orders.release",

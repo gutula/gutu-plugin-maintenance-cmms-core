@@ -7,10 +7,22 @@
     "audit-core",
     "workflow-core",
     "assets-core",
-    "inventory-core",
-    "support-service-core",
     "traceability-core"
   ],
+  "recommendedPlugins": [
+    "inventory-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "support-service-core",
+    "field-service-core",
+    "hr-payroll-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [
+    "sector-manufacturing"
+  ],
+  "standaloneSupported": false,
   "requiredCapabilities": [
     "ui.register.admin",
     "api.rest.mount",

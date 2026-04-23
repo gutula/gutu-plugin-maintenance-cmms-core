@@ -36,8 +36,6 @@
     "@plugins/audit-core": "workspace:*",
     "@plugins/workflow-core": "workspace:*",
     "@plugins/assets-core": "workspace:*",
-    "@plugins/inventory-core": "workspace:*",
-    "@plugins/support-service-core": "workspace:*",
     "@plugins/traceability-core": "workspace:*"
   }
 }
