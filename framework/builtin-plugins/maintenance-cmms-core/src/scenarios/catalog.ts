@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "maintenance.plans.publish",
       "maintenance.work-orders.release",
-      "maintenance.asset-health.record"
+      "maintenance.asset-health.record",
+      "maintenance.plans.hold",
+      "maintenance.plans.release",
+      "maintenance.plans.amend",
+      "maintenance.plans.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -26,7 +30,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "maintenance.plans.publish",
       "maintenance.work-orders.release",
-      "maintenance.asset-health.record"
+      "maintenance.asset-health.record",
+      "maintenance.plans.hold",
+      "maintenance.plans.release",
+      "maintenance.plans.amend",
+      "maintenance.plans.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -46,7 +54,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "maintenance.plans.publish",
       "maintenance.work-orders.release",
-      "maintenance.asset-health.record"
+      "maintenance.asset-health.record",
+      "maintenance.plans.hold",
+      "maintenance.plans.release",
+      "maintenance.plans.amend",
+      "maintenance.plans.reverse"
     ],
     "downstreamTargets": {
       "create": [],

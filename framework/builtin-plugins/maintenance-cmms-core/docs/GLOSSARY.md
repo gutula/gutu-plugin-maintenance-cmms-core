@@ -9,6 +9,10 @@
 | maintenance.plans.publish | Publish Maintenance Plan |
 | maintenance.work-orders.release | Release Maintenance Work Order |
 | maintenance.asset-health.record | Record Asset Health |
+| maintenance.plans.hold | Place Record On Hold |
+| maintenance.plans.release | Release Record Hold |
+| maintenance.plans.amend | Amend Record |
+| maintenance.plans.reverse | Reverse Record |
 | maintenance.projections.refresh | Job definition queued on `maintenance-projections`. |
 | maintenance.reconciliation.run | Job definition queued on `maintenance-reconciliation`. |
 | maintenance-lifecycle | Plan, release, inspect, repair, and close maintenance work. |

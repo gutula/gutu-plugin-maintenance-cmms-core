@@ -5,6 +5,10 @@
 - `maintenance.plans.publish`: Publish Maintenance Plan
 - `maintenance.work-orders.release`: Release Maintenance Work Order
 - `maintenance.asset-health.record`: Record Asset Health
+- `maintenance.plans.hold`: Place Record On Hold
+- `maintenance.plans.release`: Release Record Hold
+- `maintenance.plans.amend`: Amend Record
+- `maintenance.plans.reverse`: Reverse Record
 
 ## Operational scenario matrix
 
@@ -69,6 +73,106 @@ Forbidden shortcuts:
 Record Asset Health
 
 Permission: `maintenance.asset-health.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `maintenance.plans.hold`
+
+Place Record On Hold
+
+Permission: `maintenance.plans.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `maintenance.plans.release`
+
+Release Record Hold
+
+Permission: `maintenance.plans.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `maintenance.plans.amend`
+
+Amend Record
+
+Permission: `maintenance.plans.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `maintenance.plans.reverse`
+
+Reverse Record
+
+Permission: `maintenance.plans.write`
 
 Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
 

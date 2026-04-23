@@ -26,7 +26,7 @@ Preventive maintenance plans, asset work orders, inspections, and downtime-aware
 
 Owns preventive maintenance plans, work orders, and asset-health posture for maintenance-led operations.
 
-- Exports 3 governed actions: `maintenance.plans.publish`, `maintenance.work-orders.release`, `maintenance.asset-health.record`.
+- Exports 7 governed actions: `maintenance.plans.publish`, `maintenance.work-orders.release`, `maintenance.asset-health.record`, `maintenance.plans.hold`, `maintenance.plans.release`, `maintenance.plans.amend`, `maintenance.plans.reverse`.
 - Owns 3 resource contracts: `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `maintenance.plans.publish`, `maintenance.work-orders.release`, `maintenance.asset-health.record` |
+| Actions | 7 | `maintenance.plans.publish`, `maintenance.work-orders.release`, `maintenance.asset-health.record`, `maintenance.plans.hold`, `maintenance.plans.release`, `maintenance.plans.amend`, `maintenance.plans.reverse` |
 | Resources | 3 | `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health` |
 | Jobs | 2 | `maintenance.projections.refresh`, `maintenance.reconciliation.run` |
 | Workflows | 1 | `maintenance-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/maintenance-cmms-core";
+import { manifest, publishMaintenancePlanAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/maintenance-cmms-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(publishMaintenancePlanAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

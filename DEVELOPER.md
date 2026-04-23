@@ -71,6 +71,10 @@ Owns preventive maintenance plans, work orders, and asset-health posture for mai
 | Action | `maintenance.plans.publish` | Permission: `maintenance.plans.write` | Publish Maintenance Plan<br>Idempotent<br>Audited |
 | Action | `maintenance.work-orders.release` | Permission: `maintenance.work-orders.write` | Release Maintenance Work Order<br>Non-idempotent<br>Audited |
 | Action | `maintenance.asset-health.record` | Permission: `maintenance.asset-health.write` | Record Asset Health<br>Non-idempotent<br>Audited |
+| Action | `maintenance.plans.hold` | Permission: `maintenance.plans.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `maintenance.plans.release` | Permission: `maintenance.plans.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `maintenance.plans.amend` | Permission: `maintenance.plans.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `maintenance.plans.reverse` | Permission: `maintenance.plans.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `maintenance.plans` | Portal disabled | Preventive and corrective maintenance planning records.<br>Purpose: Own maintenance planning separately from assets, inventory, and support truth.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `maintenance.work-orders` | Portal disabled | Maintenance work orders, execution posture, and follow-up records.<br>Purpose: Track maintenance execution explicitly across preventive and corrective work.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `maintenance.asset-health` | Portal disabled | Condition, downtime, and serviceability records linked to maintained assets.<br>Purpose: Make asset-health posture explicit for planning and operational repair.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/maintenance-cmms-core";
+import { manifest, publishMaintenancePlanAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/maintenance-cmms-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  publishMaintenancePlanAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/maintenance-cmms-core";
+import { manifest, publishMaintenancePlanAction } from "@plugins/maintenance-cmms-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", publishMaintenancePlanAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `maintenance.plans.publish`, `maintenance.work-orders.release`, `maintenance.asset-health.record`.
+- Exports 7 governed actions: `maintenance.plans.publish`, `maintenance.work-orders.release`, `maintenance.asset-health.record`, `maintenance.plans.hold`, `maintenance.plans.release`, `maintenance.plans.amend`, `maintenance.plans.reverse`.
 - Owns 3 resource contracts: `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 
