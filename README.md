@@ -60,12 +60,12 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Package | `@plugins/maintenance-cmms-core` |
 | Manifest ID | `maintenance-cmms-core` |
 | Repo | [gutu-plugin-maintenance-cmms-core](https://github.com/gutula/gutu-plugin-maintenance-cmms-core) |
-| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `assets-core`, `inventory-core`, `support-service-core`, `traceability-core` |
-| Recommended Plugins | None |
-| Capability Enhancing | None |
+| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `assets-core`, `traceability-core` |
+| Recommended Plugins | `inventory-core` |
+| Capability Enhancing | `support-service-core`, `field-service-core`, `hr-payroll-core`, `analytics-bi-core` |
 | Integration Only | None |
-| Suggested Packs | None |
-| Standalone Supported | Yes |
+| Suggested Packs | `sector-manufacturing` |
+| Standalone Supported | No |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.maintenance`, `events.publish.maintenance` |
 | Provided Capabilities | `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health` |
 | Runtime | bun>=1.3.12 |
@@ -74,13 +74,13 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 ## Installation Guidance
 
-- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `assets-core`, `inventory-core`, `support-service-core`, `traceability-core`
-- Recommended plugins: none
-- Capability-enhancing plugins: none
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `assets-core`, `traceability-core`
+- Recommended plugins: `inventory-core`
+- Capability-enhancing plugins: `support-service-core`, `field-service-core`, `hr-payroll-core`, `analytics-bi-core`
 - Integration-only plugins: none
-- Suggested packs: none
-- Standalone supported: yes
-
+- Suggested packs: `sector-manufacturing`
+- Standalone supported: no
+- Maintenance is best introduced once Assets exists, otherwise work orders lack a stable installed-base anchor.
 
 ## Capability Matrix
 

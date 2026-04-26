@@ -53,12 +53,12 @@ Owns preventive maintenance plans, work orders, and asset-health posture for mai
 
 | Field | Value |
 | --- | --- |
-| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `assets-core`, `inventory-core`, `support-service-core`, `traceability-core` |
-| Recommended Plugins | None |
-| Capability Enhancing | None |
+| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `assets-core`, `traceability-core` |
+| Recommended Plugins | `inventory-core` |
+| Capability Enhancing | `support-service-core`, `field-service-core`, `hr-payroll-core`, `analytics-bi-core` |
 | Integration Only | None |
-| Suggested Packs | None |
-| Standalone Supported | Yes |
+| Suggested Packs | `sector-manufacturing` |
+| Standalone Supported | No |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.maintenance`, `events.publish.maintenance` |
 | Provides Capabilities | `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health` |
 | Owns Data | `maintenance.plans`, `maintenance.work-orders`, `maintenance.asset-health`, `maintenance.downtime-events` |
